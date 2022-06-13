@@ -24,8 +24,23 @@ If you specify that a callback param will be a function you can still do the sam
 
 
 
+
+
 ## Interfaces
+
+So interfaces are pretty much a way to declare custom types (or "shapes" of types) as a separate reference rather than inline. 
+
+You can use a `?` to make a property in an interface object optional. 
 
 ## Generics
 
+Basically allow you to pass types for parameters dynamically, thus allowing more flexibility while also avoiding the drawbacks of using type `any`. 
+
+In the below example, <AvatarProps> is the generic, meaning this is where any props are being typed. In this case, we're using an interface called `AvatarProps` which is created above this code. Then in the function, where we would normally pass in props, we're destructuring them just like we could from any props object. So instead of giving them a type when we declare them as parameters, we're typing them with the generic (the type will be defined when they're passed in) and then destructuring them for easy access without having to worry about the type.
+`export const Avatar: React.FC<AvatarProps> = ({ image, name, size = 'medium' }) => {`
+
 ## Decorators
+
+
+
+`let whatever: number<thisIsATypeArgument> = 7`
